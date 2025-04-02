@@ -1,0 +1,55 @@
+{
+  "author": "iArxic",
+  "bin": {
+    "studiopresence": "dist/server/index.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.27.0",
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "chalk": "^5.3.0",
+    "discord-rpc": "^4.0.1"
+  },
+  "description": "Connect your Studio with Discord!",
+  "devDependencies": {
+    "@types/discord-rpc": "^4.0.8",
+    "@types/node": "18.19.50",
+    "@vercel/ncc": "^0.38.1",
+    "copy-file-util": "^1.2.1",
+    "pkg": "^5.8.1",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "license": "ISC",
+  "main": "dist/server/index.js",
+  "name": "studiopresence",
+  "pkg": {
+    "scripts": "dist/server/**/*.js",
+    "targets": [
+      "node18-win-x64",
+      "node18-macos-x64",
+      "node18-linux-x64"
+    ],
+    "outputPath": "release"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iArxic/StudioPresence.git"
+  },
+  "scripts": {
+    "build:server": "rimraf dist/server && ncc build src/server/index.ts -o dist/server",
+    "dev:server": "ncc build src/server/index.ts -o dist/server -w",
+    "package:server": "rimraf release && npm run build:server && pkg . && npm run package:vbs",
+    "build:client": "rojo build -o release/studiopresence.rbxm",
+    "package": "npm run package:server && npm run build:client",
+    "package:vbs": "copy-file-util src/server/startup.vbs --folder release"
+  },
+  "version": "3.0.0",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/iArxic/StudioPresence/issues"
+  },
+  "homepage": "https://github.com/iArxic/StudioPresence#readme"
+}
