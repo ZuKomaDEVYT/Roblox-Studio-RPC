@@ -1,5 +1,5 @@
 {
-  "author": "iArxic",
+  "author": "ZuKomaDEV",
   "bin": {
     "studiopresence": "dist/server/index.js"
   },
@@ -10,7 +10,7 @@
     "chalk": "^5.3.0",
     "discord-rpc": "^4.0.1"
   },
-  "description": "Connect your Studio with Discord!",
+  "description": "Connect your Roblox Studio with Discord!",
   "devDependencies": {
     "@types/discord-rpc": "^4.0.8",
     "@types/node": "18.19.50",
@@ -36,7 +36,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iArxic/StudioPresence.git"
+    "url": "git+https://github.com/ZuKomaDEVYT/Roblox-Studio-RPC"
   },
   "scripts": {
     "build:server": "rimraf dist/server && ncc build src/server/index.ts -o dist/server",
@@ -49,7 +49,7 @@
   "version": "3.0.0",
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/iArxic/StudioPresence/issues"
+    "url": "https://github.com/ZuKomaDEVYT/Roblox-Studio-RPC/issues"
   },
-  "homepage": "https://github.com/iArxic/StudioPresence#readme"
+  "homepage": "https://github.com/ZuKomaDEVYT/Roblox-Studio-RPC#readme"
 }
